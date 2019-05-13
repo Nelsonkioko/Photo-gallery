@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 
 
 class Image(models.Model):
@@ -13,4 +12,6 @@ class Image(models.Model):
 
 class Location(models.Model):
    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+   image_location = models.CharField(max_length=100)
+
 
