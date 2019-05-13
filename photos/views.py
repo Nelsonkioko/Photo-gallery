@@ -1,7 +1,7 @@
 from django.shortcuts import render
-
+from.models import Image
 def home(request):
-   # context = {
-   #     'posts': Post.objects.all()
-   # }
-   return render(request, 'photos/home.html')
+   context = {
+       'images': Image.objects.all()
+   }
+   return render(request, 'photos/home.html', context)
