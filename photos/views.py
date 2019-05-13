@@ -4,4 +4,4 @@ def home(request):
    # context = {
    #     'posts': Post.objects.all()
    # }
-   return render(request, 'photos/base.html')
+   return render(request, 'photos/home.html')
