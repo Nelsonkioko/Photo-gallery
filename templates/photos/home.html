@@ -3,8 +3,6 @@
 
 {% block content %}
 
-
-
    <div class="row">
        {% for image in images %}
            <div class="col-md-3">
@@ -31,9 +29,9 @@
                            <img style="height:400px;margin-left: 30%" src="{{ image.image.url }}" alt="image">
                        </div>
                        <div>
-                           <h4 style="margin-left: 5%">Description: {{ image.image_description }}</h4>
-                           <h4 style="margin-left: 5%">Location: {{ image.image_location }}</h4>
-                           <h4 style="margin-left: 5%">Category: {{ image.image_category }}</h4>
+                           <h4 style="margin-left: 25%">Description: {{ image.image_description }}</h4>
+                           <h4 style="margin-left: 25%">Location: {{ image.image_location }}</h4>
+                           <h4 style="margin-left: 25%">Category: {{ image.image_category }}</h4>
                        </div>
                        <div class="modal-footer">
                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -54,9 +52,3 @@
        }
    </script>
 {% endblock content %}
-
-
-
-
-
-
