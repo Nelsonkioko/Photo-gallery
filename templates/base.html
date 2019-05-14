@@ -8,17 +8,26 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
    <title>Home</title>
 </head>
 <body>
-<nav class="navbar navbar-inverse bg-light">
-   <a class="navbar-brand" href="#">Photo Gallery</a>
-   <div>
-       <form action="{% url 'get_location' %}">
-           <textarea name="Location" cols=30 rows=1 placeholder="Enter location or category"></textarea>
-           <input class="btn btn-success" type="submit" value="Search"/>
-       </form>
-   </div>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/" style="color:olive;">My Gallery</a>
+    <div>
+        <form action="{% url 'get_location' %}">
+            <div style="float:left;"><textarea name="Location" cols=30 rows=1 class="mt-4"
+                                               placeholder="Enter location or category"
+                                               style="padding:10px;"></textarea>
+            </div>
+            <div style="float:left;"><input class="mb-2 btn btn-primary" type="submit" value="Search"
+                                            style="height:45px;margin-top:25px;"/></div>
+        </form>
+    </div>
 </nav>
 <!-- As a heading -->
 <div class="container">
