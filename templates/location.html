@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+   {% if images %}
+       <div class="container-fluid">
+           <div class="row">
+               {% for image in images %}
+                   <div class="col-md-4">
+                       <div class="card">
+                           <img class="card-body img-fluid" src="{{ image.image.url }}" height="50px" alt="image">
+                           <h3 class="card-title">{{ image.image_name }}</h3>
+                           <h3 class="card-footer">{{ image.image_description }}</h3>
+                           <h4>{{ image.image_location }}</h4>
+                       </div>
+                   </div>
+               {% endfor %}
+           </div>
+       </div>
+   {% else %}
+       <h1 >No images for that category or location at this time</h1>
+       <a href={% url 'gallery-home' %}>Go back home</a>
+   {% endif %}
+{% endblock content %}

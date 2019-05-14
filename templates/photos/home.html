@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            {% for image in images %}
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-body img-fluid" src="{{ image.image.url }}" alt="image">
-                        <h3 class="card-title">{{ image.image_name }}</h3>
-                        <h3 class="card-footer">{{ image.image_description }}</h3>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-{% endblock %}
+
+   <div class="row">
+       {% for image in images %}
+           <div class="col-md-3">
+               <div class="card">
+                   <h3 class="card-title">{{ image.image_name }}</h3>
+                   <img class="card-body img-fluid" src="{{ image.image.url }}" width="300" height="300" alt="image">
+                   <input type="hidden" value="{{ image.image.url }}" id="myInput">
+                   <button class="btn btn-primary" onclick="myFunction()">Copy Image link</button>
+               </div>
+           </div>
+       {% endfor %}
+   </div>
+   <script>
+       function myFunction() {
+           var copyText = document.getElementById("myInput");
+           copyText.select();
+           document.execCommand("copy");
+           alert("link copied: " + copyText.value);
+       }
+   </script>
+{% endblock content %}
+
 
 
 
