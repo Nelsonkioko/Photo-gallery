@@ -1,10 +1,19 @@
-{% extends 'base.html'%}
-{% block content%}
-    <h1>Home</h1>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for image in images %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-body img-fluid" src="{{ image.image.url }}" alt="image">
+                        <h3 class="card-title">{{ image.image_name }}</h3>
+                        <h3 class="card-footer">{{ image.image_description }}</h3>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
-
-
-
 
 
 
