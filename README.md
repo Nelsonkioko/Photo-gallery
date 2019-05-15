@@ -1,4 +1,4 @@
-# PHOTOGRAM
+# Photo Gallery
 
 This is a site that allows users to view photos according to location.
 
@@ -53,9 +53,8 @@ Django 1.11
 | user loads the page | all favorite images are displayed |
 | user clicks on an image that interests him/her | the image is enlarged in a modal and its Description is shown |
 | user clicks on the copy link button | the image url is copied and an alert is displayed |
-| user searches for an image category  | user is re-directed to the searched term with relevant images displayed |
-| user clicks on location | a dropdown menu is displayed |
-| usser clicks on one of the dropdown menu | user is re-directed to  the relevant images |
+| user searches for an image category or location | user is re-directed to the searched term with relevant images displayed |
+
 
 
 
