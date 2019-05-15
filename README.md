@@ -10,7 +10,7 @@ Nelson Kioko
 
 Python 3.6
 
-Django 1.11
+Django 2.2.1
 
 ## Application requirements
 
