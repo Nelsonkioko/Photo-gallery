@@ -24,7 +24,7 @@ SECRET_KEY = 'vm#9vc*1vfn05822h48$j(-4j!(0eg$dd!9orp__fz870&r%jm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ "gallery777.herokuapp.com"]
 
 # Application definition
 
