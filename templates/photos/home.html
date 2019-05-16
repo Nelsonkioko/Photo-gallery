@@ -1,30 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 {{ block.super }}
-<script>
-    function CopyFun(link) {
-        var copyText = document.getElementById(link);
-        copyText.select();
-        document.execCommand("copy");
-        alert("Text has been copied: " + copyText.value);
-    }
-</script>
 
-<div class="container" style='color:#ffff;font-family: fantasy;'>
-    <div class="row">
+    <script>
+        function CopyFun(link) {
+            var copyText = document.getElementById(link);
+            copyText.select();
+            document.execCommand("copy");
+            alert("Link has been copied: " + copyText.value);
+        }
+    </script>
 
-                {% for image in images %}
-                    <div class="col-md-3">
+
+    <div class="container" style='color:#ffff;font-family: fantasy;'>
+        <div class="row">
+
+            {% for image in images %}
+                <div class="col-md-3">
                     <a data-fancybox href="{{ image.image.url }}"
-                       data-caption="<p>{{ image.image_description }}</p> <button type='button' class='btn btn-primary' onclick=CopyFun('{{ image.id }}') name='button' >Copy Link</button>">
-                        <img src=" {{ image.image.url }}" alt=" massive image" style='width:100%;height: 80%;'>
+                       data-caption="<p>{{ image.image_description }}</p> <button type='button' class='btn btn-primary' onclick=CopyFun('{{ image.id }}') name='button' >Copy Link</button> <input type='text' class='hidden' value='https://localhost:8000/{{ image.image.url }}' id='{{ image.id }}'>" >
+
+                        <img src=" {{ image.image.url }}" alt=" massive image" style='width:100%;height:70%;'>
+
                     </a>
-                    <div><h4>Category:{{ image.image_category}}</h4></div>
-                    <div><h4>Taken in {{ image.image_location}} area</h4></div>
-                    </div>
-                {% endfor %}
 
 
+                    <div><h4>Category:{{ image.image_category }}</h4></div>
+                    <div><h4>Taken in {{ image.image_location }} area </h4></div>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
     </div>
-</div>
 {% endblock %}
